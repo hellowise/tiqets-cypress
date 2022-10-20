@@ -1,7 +1,7 @@
 import bookingSelectors from '../support/selectors/bookingSelectors.js';
 import homeSelectors from '../support/selectors/homeSelectors.js';
-let language = Cypress.env('language')
-let currency = Cypress.env('currency')
+let language = Cypress.env('language');
+let currency = Cypress.env('currency');
 
 // This feature tests some of the tests described on the STD PDF I sent
 // I tried to do my best with lacking ids/unique classes on the page elements
@@ -12,9 +12,11 @@ describe('Handpicked combinations for New York attractions', () => {
   beforeEach(() => {
     // Loads the webpage
     cy.visit('/new-york-attractions-c260932/?show=attractions')
-    // Selects the language from env
+    // Opens the website settings
     cy.get(homeSelectors.languageAndCurrencySettings).click()
+    // Selects the language from env
     cy.get(homeSelectors.languageCurrencyOptions).first().select(language)
+    // Selects the currency from env
     cy.get(homeSelectors.languageCurrencyOptions).last().select(currency)
     // Saves changes
     cy.get(homeSelectors.saveChanges).click()
