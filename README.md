@@ -1,4 +1,4 @@
-## This project was built by Heloise Fonseca as a part of the hiring process for Atriis.
+## Cypress UI test example.
 
 It was built on Cypress latest version 10.9.0.
 To run this project follow the steps:
